@@ -1,0 +1,122 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://UI/background/BackgroundEnd.png" type="Texture" id=1]
+[ext_resource path="res://UI/background/BackgroundStart.png" type="Texture" id=2]
+[ext_resource path="res://Menu/background_menu.gd" type="Script" id=3]
+[ext_resource path="res://UI/buttons/RedBtn.png" type="Texture" id=4]
+[ext_resource path="res://UI/buttons/BlueBtn.png" type="Texture" id=5]
+[ext_resource path="res://UI/fonts/PixelifySans-VariableFont_wght.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://UI/fonts/Danfo-Regular-VariableFont_ELSH.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Menu/Menu.gd" type="Script" id=8]
+[ext_resource path="res://UI/buttons/no_musicBtn.png" type="Texture" id=9]
+[ext_resource path="res://UI/audio/Limit 70.mp3" type="AudioStream" id=10]
+
+[sub_resource type="DynamicFont" id=3]
+size = 44
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 44
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 44
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 44
+font_data = ExtResource( 6 )
+
+[node name="Menu" type="Control"]
+script = ExtResource( 8 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource( 3 )
+
+[node name="BackLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 420, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/BackLayer"]
+scale = Vector2( 3.2, 3.33333 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="FrontLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 963.431, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/FrontLayer"]
+position = Vector2( 512, 324.5 )
+scale = Vector2( 3.2, 3.06111 )
+texture = ExtResource( 2 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="title" type="Label" parent="UI"]
+margin_left = 212.0
+margin_top = 96.0
+margin_right = 601.0
+margin_bottom = 154.0
+rect_scale = Vector2( 1.671, 2.335 )
+custom_colors/font_color = Color( 0.564706, 0.6, 0.113725, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Wrestle Physics"
+
+[node name="OnePlayer" type="TouchScreenButton" parent="UI"]
+position = Vector2( 360, 200 )
+scale = Vector2( 10.875, 7.6875 )
+normal = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="UI/OnePlayer"]
+margin_left = 5.156
+margin_top = 7.569
+margin_right = 203.156
+margin_bottom = 65.5691
+rect_scale = Vector2( 0.111, 0.231 )
+custom_fonts/font = SubResource( 1 )
+text = "1 Player"
+
+[node name="TwoPlayers" type="TouchScreenButton" parent="UI"]
+position = Vector2( 359, 350 )
+scale = Vector2( 10.9375, 8.28125 )
+normal = ExtResource( 4 )
+
+[node name="LabelBtn2" type="Label" parent="UI/TwoPlayers"]
+margin_left = 3.2
+margin_top = 7.567
+margin_right = 233.2
+margin_bottom = 65.567
+rect_scale = Vector2( 0.111, 0.231 )
+custom_constants/shadow_offset_y = 0
+custom_fonts/font = SubResource( 2 )
+text = "2 Players"
+
+[node name="description" type="Label" parent="UI"]
+margin_left = 748.0
+margin_top = 16.0
+margin_right = 1116.0
+margin_bottom = 70.0
+rect_rotation = 36.5
+rect_scale = Vector2( 0.626, 1.452 )
+custom_fonts/font = SubResource( 4 )
+text = "Made With Godot"
+
+[node name="soundButton" type="TouchScreenButton" parent="UI"]
+position = Vector2( -2, 462 )
+scale = Vector2( 5.03125, 4.5625 )
+normal = ExtResource( 9 )
+
+[node name="audio_menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 510, 303 )
+current = true
+
+[connection signal="pressed" from="UI/OnePlayer" to="." method="OneBtn_pressed"]
+[connection signal="pressed" from="UI/TwoPlayers" to="." method="TwoBtn_pressed"]
+[connection signal="pressed" from="UI/soundButton" to="." method="soundButton_pressed"]

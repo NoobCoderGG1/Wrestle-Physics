@@ -1,0 +1,253 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://UI/background/levelBackground_End.png" type="Texture" id=3]
+[ext_resource path="res://Level/TexturesMap/Grass.png" type="Texture" id=10]
+[ext_resource path="res://Level/TexturesMap/BackgroundGround.png" type="Texture" id=11]
+[ext_resource path="res://UI/audio/Strength of the Titans.mp3" type="AudioStream" id=12]
+[ext_resource path="res://Level/Level.gd" type="Script" id=13]
+[ext_resource path="res://UI/buttons/jumpBtnBlue.png" type="Texture" id=14]
+[ext_resource path="res://UI/buttons/jumpBtnRed.png" type="Texture" id=15]
+[ext_resource path="res://UI/buttons/returnBtn.png" type="Texture" id=16]
+[ext_resource path="res://UI/under.png" type="Texture" id=17]
+[ext_resource path="res://UI/progress.png" type="Texture" id=18]
+[ext_resource path="res://UI/background/levelBackground_Start.png" type="Texture" id=19]
+[ext_resource path="res://UI/fonts/Danfo-Regular-VariableFont_ELSH.ttf" type="DynamicFontData" id=20]
+[ext_resource path="res://UI/fonts/PixelifySans-VariableFont_wght.ttf" type="DynamicFontData" id=21]
+[ext_resource path="res://UI/buttons/BlueBtn.png" type="Texture" id=22]
+[ext_resource path="res://UI/background/endGame.png" type="Texture" id=23]
+[ext_resource path="res://Level/TexturesMap/BackgroundSand.png" type="Texture" id=24]
+[ext_resource path="res://Level/TexturesMap/Sand.png" type="Texture" id=25]
+[ext_resource path="res://Level/TexturesMap/Snow.png" type="Texture" id=26]
+[ext_resource path="res://Level/TexturesMap/BackgroundSnow.png" type="Texture" id=27]
+
+[sub_resource type="Curve2D" id=77]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 125, 364, 0, 0, 0, 0, 258, 698, 0, 0, 0, 0, 991, 734, 0, 0, 0, 0, 1083, 464, 0, 0, 0, 0, 1512, 63, 0, 0, 0, 0, 1359, -139, 0, 0, 0, 0, 1048, 20, 78.3991, -106.908, -78.3991, 106.908, 1023, 297, 81.9627, -44.5449, -81.9627, 44.5449, 951, 445, 78.3991, -63.2538, -78.3991, 63.2538, 821, 441, 57.0175, -32.9633, -57.0175, 32.9633, 544, 470, -47.2176, 60.5811, 47.2176, -60.5811, 227, 249, 94.3874, -5.66325, -94.3874, 5.66325, 231, 22, 0, 0, 0, 0, 125, 364 )
+}
+
+[sub_resource type="Curve2D" id=78]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 129, 74, 2.37841, -35.0816, -2.37841, 35.0816, 331, 337, -52.0588, -4.67194, 52.0588, 4.67194, 237, 629, 55.3959, -50.7239, -55.3959, 50.7239, 427, 516, -110.792, -73.4162, 110.792, 73.4162, 966, 525, -81.0718, 112.253, 81.0718, -112.253, 1336, 612, 0, 0, 0, 0, 1188, 321, 0, 0, 0, 0, 1458, -3, 0, 0, 0, 0, 1484, 794, 0, 0, 0, 0, 135, 791, 0, 0, 0, 0, 129, 74 )
+}
+
+[sub_resource type="Curve2D" id=79]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 164, 74, -14, -143, 14, 143, 26, 523, -113, -1, 113, 1, 425, 804, -148, -14, 148, 14, 642, 802, 12.3471, 126.838, -12.3471, -126.838, 1059, 388, 0, 0, 0, 0, 806, -72, 0, 0, 0, 0, 1356, 249, 0, 0, 0, 0, 1325, 919, 0, 0, 0, 0, 643, 1124, 0, 0, 0, 0, 130, 1032, 0, 0, 0, 0, -161, 599, 0, 0, 0, 0, -50, 148, 0, 0, 0, 0, 164, 74 )
+}
+
+[sub_resource type="DynamicFont" id=74]
+size = 73
+use_filter = true
+font_data = ExtResource( 20 )
+
+[sub_resource type="DynamicFont" id=75]
+size = 82
+font_data = ExtResource( 20 )
+
+[sub_resource type="DynamicFont" id=76]
+size = 11
+font_data = ExtResource( 21 )
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 13 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayerEnd" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 300, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayerEnd"]
+position = Vector2( 0, -521 )
+scale = Vector2( 3.2, 6.67222 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ParallaxLayerStart" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 0.4 )
+motion_mirroring = Vector2( 500, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayerStart"]
+position = Vector2( 0, -400 )
+scale = Vector2( 3.2, 5.245 )
+texture = ExtResource( 19 )
+centered = false
+
+[node name="map_0" type="StaticBody2D" parent="."]
+position = Vector2( -58, 86 )
+collision_mask = 15
+
+[node name="Path2D" type="Path2D" parent="map_0"]
+visible = false
+position = Vector2( -5, -7 )
+curve = SubResource( 77 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="map_0"]
+visible = false
+polygon = PoolVector2Array( 232, 24, 125, 367, 255, 696, 995, 737, 1086, 464, 1515, 65, 1360, -139, 1052, 23, 961, 311, 745, 404, 649, 306, 533, 409, 434, 392 )
+
+[node name="Polygon2D" type="Polygon2D" parent="map_0"]
+texture = ExtResource( 27 )
+polygon = PoolVector2Array( 232, 26, 125, 365, 257, 698, 993, 735, 1084, 466, 1515, 64, 1360, -138, 1050, 21, 959, 311, 745, 402, 649, 306, 533, 408, 435, 393 )
+
+[node name="BorderLine" type="Line2D" parent="map_0"]
+points = PoolVector2Array( 232, 25, 434, 391, 531, 409, 648, 307, 746, 399, 959, 311, 1050, 21, 1361, -139 )
+default_color = Color( 1, 1, 1, 1 )
+texture = ExtResource( 26 )
+texture_mode = 1
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="map_1" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 0
+
+[node name="Path2D" type="Path2D" parent="map_1"]
+visible = false
+curve = SubResource( 78 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="map_1"]
+visible = false
+polygon = PoolVector2Array( 127, 74, 123, 801, 1486, 801, 1459, -5, 1187, 325, 1335, 617, 963, 525, 426, 512, 224, 644, 336, 339 )
+
+[node name="Polygon2D" type="Polygon2D" parent="map_1"]
+texture = ExtResource( 24 )
+polygon = PoolVector2Array( 127, 76, 334, 337, 228, 637, 428, 516, 954, 523, 1333, 615, 1187, 323, 1461, -9, 1488, 799, 125, 797 )
+
+[node name="BorderLine" type="Line2D" parent="map_1"]
+points = PoolVector2Array( 127, 77, 332, 339, 229, 637, 427, 516, 954, 525, 1335, 616, 1188, 324, 1458, -5 )
+width = 15.946
+default_color = Color( 1, 1, 1, 1 )
+texture = ExtResource( 25 )
+texture_mode = 1
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="map_2" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( -12, -289 )
+collision_layer = 0
+collision_mask = 0
+
+[node name="Path2D" type="Path2D" parent="map_2"]
+visible = false
+curve = SubResource( 79 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="map_2"]
+visible = false
+polygon = PoolVector2Array( 168, 74, 20, 525, 426, 808, 645, 808, 911, 526, 1058, 388, 806, -73, 1364, 253, 1331, 928, 643, 1129, 130, 1035, -165, 604, -59, 151 )
+
+[node name="Polygon2D" type="Polygon2D" parent="map_2"]
+color = Color( 1, 0, 0, 1 )
+texture = ExtResource( 11 )
+polygon = PoolVector2Array( 166, 74, 24, 527, 423, 808, 642, 806, 1061, 388, 804, -72, 1358, 249, 1329, 922, 642, 1129, 128, 1034, -162, 603, -54, 148 )
+
+[node name="BorderLine" type="Line2D" parent="map_2"]
+points = PoolVector2Array( 164, 73, 23, 526, 422, 806, 641, 804, 1060, 389, 807, -71 )
+default_color = Color( 1, 1, 1, 1 )
+texture = ExtResource( 10 )
+texture_mode = 1
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="RedTextureProgress" type="TextureProgress" parent="UI"]
+margin_right = 160.0
+margin_bottom = 40.0
+rect_scale = Vector2( 3, 3 )
+step = 15.0
+texture_under = ExtResource( 17 )
+texture_progress = ExtResource( 18 )
+
+[node name="BlueTextureProgress" type="TextureProgress" parent="UI"]
+margin_left = 1024.0
+margin_right = 1184.0
+margin_bottom = 32.0
+rect_scale = Vector2( -3, 3 )
+step = 15.0
+texture_under = ExtResource( 17 )
+texture_progress = ExtResource( 18 )
+
+[node name="menuBtn" type="TouchScreenButton" parent="UI"]
+position = Vector2( 443.002, 0 )
+scale = Vector2( 3.96875, 3.71875 )
+normal = ExtResource( 16 )
+
+[node name="left_jumpBtn" type="TouchScreenButton" parent="UI"]
+position = Vector2( 0, 347 )
+scale = Vector2( 8.812, 7.906 )
+normal = ExtResource( 15 )
+action = "jump1"
+
+[node name="right_jumpBtn" type="TouchScreenButton" parent="UI"]
+position = Vector2( 742, 347 )
+scale = Vector2( 8.812, 7.906 )
+normal = ExtResource( 14 )
+action = "jump2"
+
+[node name="resultRoundText" type="Label" parent="UI"]
+visible = false
+margin_left = 192.0
+margin_top = 186.0
+margin_right = 775.0
+margin_bottom = 282.0
+rect_scale = Vector2( 1.042, 1.455 )
+custom_fonts/font = SubResource( 74 )
+text = "Red Take Round"
+
+[node name="endGame" type="Node2D" parent="UI"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="UI/endGame"]
+position = Vector2( 511, 246 )
+scale = Vector2( 1.69375, 1.57778 )
+texture = ExtResource( 23 )
+
+[node name="Label" type="Label" parent="UI/endGame"]
+margin_left = 323.0
+margin_top = 89.0
+margin_right = 707.0
+margin_bottom = 197.0
+custom_colors/font_color = Color( 1, 0.87451, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0.427451, 0, 1 )
+custom_fonts/font = SubResource( 75 )
+text = "END GAME"
+
+[node name="Label2" type="Label" parent="UI/endGame"]
+margin_left = 343.0
+margin_top = 175.0
+margin_right = 727.0
+margin_bottom = 283.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 75 )
+text = "RED WIN"
+
+[node name="restartBtn" type="TouchScreenButton" parent="UI/endGame"]
+position = Vector2( 539, 272 )
+scale = Vector2( 4.46875, 4.1875 )
+normal = ExtResource( 22 )
+
+[node name="Label" type="Label" parent="UI/endGame/restartBtn"]
+margin_left = 1.11888
+margin_top = 6.44776
+margin_right = 43.1189
+margin_bottom = 26.4478
+rect_scale = Vector2( 0.704, 1.154 )
+custom_fonts/font = SubResource( 76 )
+text = "RESTART"
+
+[node name="menuBtn" type="TouchScreenButton" parent="UI/endGame"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 320, 284 )
+scale = Vector2( 4.9375, 4.21875 )
+normal = ExtResource( 16 )
+
+[node name="audio_level" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[connection signal="pressed" from="UI/menuBtn" to="." method="menuBtn_pressed"]
+[connection signal="pressed" from="UI/endGame/restartBtn" to="." method="restartBtn_pressed"]
+[connection signal="pressed" from="UI/endGame/menuBtn" to="." method="menuBtn_pressed"]

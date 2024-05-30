@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/head_touch.mp3-6dadcb060801db34d97db18dd117b274.mp3str"
+
+[deps]
+
+source_file="res://UI/audio/head_touch.mp3"
+dest_files=[ "res://.import/head_touch.mp3-6dadcb060801db34d97db18dd117b274.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
