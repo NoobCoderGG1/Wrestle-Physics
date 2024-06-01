@@ -117,6 +117,7 @@ stream = ExtResource( 10 )
 position = Vector2( 510, 303 )
 current = true
 
+[connection signal="ready" from="." to="." method="_ready"]
 [connection signal="pressed" from="UI/OnePlayer" to="." method="OneBtn_pressed"]
 [connection signal="pressed" from="UI/TwoPlayers" to="." method="TwoBtn_pressed"]
 [connection signal="pressed" from="UI/soundButton" to="." method="soundButton_pressed"]

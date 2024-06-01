@@ -33,6 +33,7 @@ func _ready():
 		$UI/left_jumpBtn.visible = false
 
 func menuBtn_pressed():
+	Global.js_show_ad()
 	get_tree().root.get_node("Menu/Camera2D").current = true
 	get_tree().root.get_node("Menu/UI").visible = true
 	get_tree().root.get_node("Menu").two_players_mode = false

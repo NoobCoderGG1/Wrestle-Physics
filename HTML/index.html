@@ -114,6 +114,11 @@
 	</style>
 <link id='-gd-engine-icon' rel='icon' type='image/png' href='index.icon.png' />
 <link rel='apple-touch-icon' href='index.apple-touch-icon.png'/>
+<style>
+html {
+  overflow: hidden;
+}
+</style>
 <script src="https://yandex.ru/games/sdk/v2"></script>
 <script>
 YaGames
@@ -122,6 +127,36 @@ YaGames
         console.log('Yandex SDK initialized');
         window.ysdk = ysdk;
     });
+function showAd(callback) {
+	ysdk.adv.showFullscreenAdv({
+	    callbacks: {
+	        onClose: function(wasShown) {
+	          // Действие после закрытия рекламы.
+	        },
+	        onError: function(error) {
+	          // Действие в случае ошибки.
+	        }
+	    }
+	})
+}
+function showRewardVideo(callback){
+	ysdk.adv.showRewardedVideo({
+	    callbacks: {
+	        onOpen: () => {
+	          console.log('Video ad open.');
+	        },
+	        onRewarded: () => {
+	          console.log('Rewarded!');
+	        },
+	        onClose: () => {
+	          console.log('Video ad closed.');
+	        }, 
+	        onError: (e) => {
+	          console.log('Error while open video ad:', e);
+	        }
+	    }
+	})
+}
 </script>
 </head>
 <body>
@@ -147,7 +182,7 @@ YaGames
 	<script type='text/javascript' src='index.js'></script>
 	<script type='text/javascript'>//<![CDATA[
 
-		const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":32739920,"index.wasm":18795755},"focusCanvas":true,"gdnativeLibs":[]};
+		const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":32740976,"index.wasm":18795755},"focusCanvas":true,"gdnativeLibs":[]};
 		var engine = new Engine(GODOT_CONFIG);
 
 		(function() {

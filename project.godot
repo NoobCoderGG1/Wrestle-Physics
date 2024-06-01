@@ -180,6 +180,10 @@ config/name="Wrestle Physics"
 run/main_scene="res://Menu/Menu.tscn"
 config/icon="res://UI/icon.png"
 
+[autoload]
+
+Global="*res://global.gd"
+
 [display]
 
 window/size/resizable=false

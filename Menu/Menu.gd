@@ -4,6 +4,9 @@ var time_menu = 0
 var sound = false
 var two_players_mode = false
 
+func _ready():
+	Global.js_show_ad()
+	
 func _notification(what):
 	match what:
 		MainLoop.NOTIFICATION_WM_FOCUS_OUT:
@@ -45,4 +48,3 @@ func soundButton_pressed():
 		sound = true
 		$UI/soundButton.normal = load("res://UI/buttons/musicBtn.png")
 		$audio_menu.playing = true
-
