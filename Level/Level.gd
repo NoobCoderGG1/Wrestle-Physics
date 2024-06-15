@@ -7,7 +7,7 @@ var restart_game = false;
 var timer = 0.0 #Переменная для задержки перед рестартом
 var wrestlers_scene
 var round_count = 1
-var map_index = 0
+var map_index = 0 #randi() % 5
 func _ready():
 	Engine.set_time_scale(1.0)
 	$audio_level.pitch_scale = 1.0
@@ -24,6 +24,14 @@ func _ready():
 	$map_2/CollisionPolygon2D.polygon = points
 	$map_2/Polygon2D.polygon = points
 	$map_2/BorderLine.points = points
+	points = $map_3/Path2D.curve.get_baked_points()
+	$map_3/CollisionPolygon2D.polygon = points
+	$map_3/Polygon2D.polygon = points
+	$map_3/BorderLine.points = points
+	points = $map_4/Path2D.curve.get_baked_points()
+	$map_4/CollisionPolygon2D.polygon = points
+	$map_4/Polygon2D.polygon = points
+	$map_4/BorderLine.points = points
 	
 	wrestlers_scene = load("res://Wrestlers/Wrestlers.tscn")
 	wrestlers = wrestlers_scene.instance()
@@ -68,7 +76,7 @@ func _process(delta):
 		if countTo_lose1 >= 1:
 			$UI/resultRoundText.visible = true
 			$UI/resultRoundText.text = "Blue take Round: " + str(round_count)
-			$UI/resultRoundText.self_modulate = Color(0,0,255)
+			$UI/resultRoundText.self_modulate = Color("206ac9")
 			round_count += 1
 			countTo_lose1 = 0
 			countTo_lose2 = 0
@@ -77,7 +85,7 @@ func _process(delta):
 		if countTo_lose2 >= 1:
 			$UI/resultRoundText.visible = true
 			$UI/resultRoundText.text = "Red take Round: " + str(round_count)
-			$UI/resultRoundText.self_modulate = Color(255,0,0)
+			$UI/resultRoundText.self_modulate = Color("e72222")
 			round_count += 1
 			countTo_lose2 = 0
 			countTo_lose1 = 0
@@ -117,7 +125,21 @@ func _process(delta):
 					$map_2.set_collision_mask_bit(2,false)
 					$map_2.set_collision_mask_bit(3,false)
 					$map_2.visible = false
-			map_index = randi() % 3
+				3:
+					$map_3.set_collision_layer_bit(0,false)
+					$map_3.set_collision_mask_bit(0,false)
+					$map_3.set_collision_mask_bit(1,false)
+					$map_3.set_collision_mask_bit(2,false)
+					$map_3.set_collision_mask_bit(3,false)
+					$map_3.visible = false
+				4:
+					$map_4.set_collision_layer_bit(0,false)
+					$map_4.set_collision_mask_bit(0,false)
+					$map_4.set_collision_mask_bit(1,false)
+					$map_4.set_collision_mask_bit(2,false)
+					$map_4.set_collision_mask_bit(3,false)
+					$map_4.visible = false
+			map_index = randi() % 5
 			match map_index:
 				0:
 					$map_0.set_collision_layer_bit(0,true)
@@ -140,6 +162,20 @@ func _process(delta):
 					$map_2.set_collision_mask_bit(2,true)
 					$map_2.set_collision_mask_bit(3,true)
 					$map_2.visible = true
+				3:
+					$map_3.set_collision_layer_bit(0,true)
+					$map_3.set_collision_mask_bit(0,true)
+					$map_3.set_collision_mask_bit(1,true)
+					$map_3.set_collision_mask_bit(2,true)
+					$map_3.set_collision_mask_bit(3,true)
+					$map_3.visible = true
+				4:
+					$map_4.set_collision_layer_bit(0,true)
+					$map_4.set_collision_mask_bit(0,true)
+					$map_4.set_collision_mask_bit(1,true)
+					$map_4.set_collision_mask_bit(2,true)
+					$map_4.set_collision_mask_bit(3,true)
+					$map_4.visible = true
 				
 			get_tree().root.get_node("Level").get_node(wrestlers.name).queue_free()
 			wrestlers = wrestlers_scene.instance()

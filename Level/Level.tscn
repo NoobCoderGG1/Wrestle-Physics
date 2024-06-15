@@ -1,5 +1,7 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=30 format=2]
 
+[ext_resource path="res://UI/buttons/jumpBtnBluePressed.png" type="Texture" id=1]
+[ext_resource path="res://UI/buttons/jumpBtnRedPressed.png" type="Texture" id=2]
 [ext_resource path="res://UI/background/levelBackground_End.png" type="Texture" id=3]
 [ext_resource path="res://Level/TexturesMap/Grass.png" type="Texture" id=10]
 [ext_resource path="res://Level/TexturesMap/BackgroundGround.png" type="Texture" id=11]
@@ -25,14 +27,24 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 125, 364, 0, 0, 0, 0, 258, 698, 0, 0, 0, 0, 991, 734, 0, 0, 0, 0, 1083, 464, 0, 0, 0, 0, 1512, 63, 0, 0, 0, 0, 1359, -139, 0, 0, 0, 0, 1048, 20, 78.3991, -106.908, -78.3991, 106.908, 1023, 297, 81.9627, -44.5449, -81.9627, 44.5449, 951, 445, 78.3991, -63.2538, -78.3991, 63.2538, 821, 441, 57.0175, -32.9633, -57.0175, 32.9633, 544, 470, -47.2176, 60.5811, 47.2176, -60.5811, 227, 249, 94.3874, -5.66325, -94.3874, 5.66325, 231, 22, 0, 0, 0, 0, 125, 364 )
 }
 
-[sub_resource type="Curve2D" id=78]
+[sub_resource type="Curve2D" id=80]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 129, 74, 2.37841, -35.0816, -2.37841, 35.0816, 331, 337, -52.0588, -4.67194, 52.0588, 4.67194, 237, 629, 55.3959, -50.7239, -55.3959, 50.7239, 427, 516, -110.792, -73.4162, 110.792, 73.4162, 966, 525, -81.0718, 112.253, 81.0718, -112.253, 1336, 612, 0, 0, 0, 0, 1188, 321, 0, 0, 0, 0, 1458, -3, 0, 0, 0, 0, 1484, 794, 0, 0, 0, 0, 135, 791, 0, 0, 0, 0, 129, 74 )
+"points": PoolVector2Array( 0, 0, 0, 0, 153, 163, 0, 0, 0, 0, 261, 337, -170, -14, 170, 14, 351, 491, -186, 0, 186, 0, 569, 507, 0, 0, 0, 0, 823, 503, -220, 114, 220, -114, 989, 495, 0, 0, 0, 0, 1237, 173, 0, 0, 0, 0, 1403, 615, 0, 0, 0, 0, 1171, 787, 0, 0, 0, 0, 397, 855, 0, 0, 0, 0, 241, 673, 0, 0, 0, 0, 153, 163 )
 }
 
 [sub_resource type="Curve2D" id=79]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 164, 74, -14, -143, 14, 143, 26, 523, -113, -1, 113, 1, 425, 804, -148, -14, 148, 14, 642, 802, 12.3471, 126.838, -12.3471, -126.838, 1059, 388, 0, 0, 0, 0, 806, -72, 0, 0, 0, 0, 1356, 249, 0, 0, 0, 0, 1325, 919, 0, 0, 0, 0, 643, 1124, 0, 0, 0, 0, 130, 1032, 0, 0, 0, 0, -161, 599, 0, 0, 0, 0, -50, 148, 0, 0, 0, 0, 164, 74 )
+}
+
+[sub_resource type="Curve2D" id=81]
+_data = {
+"points": PoolVector2Array( 13.4929, -117.468, -13.4929, 117.468, 270, 160, -24.6942, -76.3274, 24.6942, 76.3274, 115, 493, -107.029, -52.3251, 107.029, 52.3251, 288, 623, -140.841, 116.868, 140.841, -116.868, 1034, 655, 0, 0, 0, 0, 1193, 456, -119.865, 53.9391, 119.865, -53.9391, 1220, 178, -77.912, -232.238, 77.912, 232.238, 1384, 295, 280.183, -73.4171, -280.183, 73.4171, 1034, 855, 281.682, -50.9424, -281.682, 50.9424, 690, 989, 0, 0, 0, 0, 211, 891, -27.7183, 181.429, 27.7183, -181.429, 28, 539, 0, 0, 0, 0, 270, 160 )
+}
+
+[sub_resource type="Curve2D" id=82]
+_data = {
+"points": PoolVector2Array( -71.2719, -3.56359, 71.2719, 3.56359, 390, 178, 0, 0, 0, 0, 315, 427, -78.3991, 0, 78.3991, 0, 421, 379, -67.7083, -26.727, 67.7083, 26.727, 489, 480, -124.726, 12.4726, 124.726, -12.4726, 711, 448, -114.035, 1.7818, 114.035, -1.7818, 937, 651, -71.2719, 10.6908, 71.2719, -10.6908, 1117, 487, -78.3991, 37.4177, 78.3991, -37.4177, 1360, 635, 12.4726, 105.126, -12.4726, -105.126, 1383, 434, -115.817, -16.0362, 115.817, 16.0362, 1472, 244, -85.5263, -121.162, 85.5263, 121.162, 1591, 429, 55.2357, -80.1809, -55.2357, 80.1809, 1601, 732, 124.726, -67.7083, -124.726, 67.7083, 1349, 906, 149.671, -99.7807, -149.671, 99.7807, 990, 879, 163.925, 1.7818, -163.925, -1.7818, 779, 998, 110.471, 8.90899, -110.471, -8.90899, 430, 903, 71.2719, 44.5449, -71.2719, -44.5449, 173, 946, 81.9627, 7.12719, -81.9627, -7.12719, 132, 689, 51.6721, 89.0899, -51.6721, -89.0899, 40, 559, -101.562, 124.726, 101.562, -124.726, 202, 256, 0, 0, 0, 0, 390, 178 )
 }
 
 [sub_resource type="DynamicFont" id=74]
@@ -106,19 +118,18 @@ collision_mask = 0
 
 [node name="Path2D" type="Path2D" parent="map_1"]
 visible = false
-curve = SubResource( 78 )
+curve = SubResource( 80 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="map_1"]
 visible = false
-polygon = PoolVector2Array( 127, 74, 123, 801, 1486, 801, 1459, -5, 1187, 325, 1335, 617, 963, 525, 426, 512, 224, 644, 336, 339 )
+polygon = PoolVector2Array( 270, 393, 892, 402, 851, 689, 216, 660 )
 
 [node name="Polygon2D" type="Polygon2D" parent="map_1"]
 texture = ExtResource( 24 )
-polygon = PoolVector2Array( 127, 76, 334, 337, 228, 637, 428, 516, 954, 523, 1333, 615, 1187, 323, 1461, -9, 1488, 799, 125, 797 )
+polygon = PoolVector2Array( 272, 393, 888, 402, 854, 685, 218, 657 )
 
 [node name="BorderLine" type="Line2D" parent="map_1"]
-points = PoolVector2Array( 127, 77, 332, 339, 229, 637, 427, 516, 954, 525, 1335, 616, 1188, 324, 1458, -5 )
-width = 15.946
+points = PoolVector2Array( 270, 391, 888, 404 )
 default_color = Color( 1, 1, 1, 1 )
 texture = ExtResource( 25 )
 texture_mode = 1
@@ -152,6 +163,58 @@ texture_mode = 1
 begin_cap_mode = 2
 end_cap_mode = 2
 
+[node name="map_3" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 0
+
+[node name="Path2D" type="Path2D" parent="map_3"]
+visible = false
+curve = SubResource( 81 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="map_3"]
+visible = false
+polygon = PoolVector2Array( 208, 194, 116, 501, 293, 626, 626, 653, 1031, 654, 1195, 457, 1222, 175, 1387, 289, 1034, 859, 692, 992, 212, 892, 27, 539 )
+
+[node name="Polygon2D" type="Polygon2D" parent="map_3"]
+texture = ExtResource( 24 )
+polygon = PoolVector2Array( 206, 194, 106, 504, 289, 634, 649, 664, 1036, 663, 1204, 464, 1227, 188, 1378, 294, 1034, 860, 693, 992, 215, 893, 26, 538 )
+
+[node name="BorderLine" type="Line2D" parent="map_3"]
+points = PoolVector2Array( 206, 194, 108, 502, 290, 632, 642, 661, 1034, 661, 1201, 462, 1227, 187, 1379, 292 )
+width = 15.946
+default_color = Color( 1, 1, 1, 1 )
+texture = ExtResource( 25 )
+texture_mode = 1
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="map_4" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 0
+
+[node name="Path2D" type="Path2D" parent="map_4"]
+visible = false
+position = Vector2( 0, 1 )
+curve = SubResource( 82 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="map_4"]
+visible = false
+polygon = PoolVector2Array( 389, 176, 314, 431, 422, 380, 488, 486, 711, 448, 937, 657, 1117, 494, 1363, 643, 1391, 439, 1469, 248, 1586, 431, 1596, 734, 1259, 905, 274, 918, 37, 562, 200, 259 )
+
+[node name="Polygon2D" type="Polygon2D" parent="map_4"]
+texture = ExtResource( 27 )
+polygon = PoolVector2Array( 200, 259, 41, 566, 272, 907, 469, 850, 628, 926, 759, 806, 939, 922, 1088, 806, 1257, 901, 1461, 772, 1598, 742, 1584, 441, 1473, 246, 1403, 448, 1376, 666, 1122, 505, 937, 674, 711, 458, 484, 503, 427, 384, 300, 452, 399, 166 )
+
+[node name="BorderLine" type="Line2D" parent="map_4"]
+points = PoolVector2Array( 395, 168, 300, 448, 422, 386, 482, 496, 708, 456, 939, 670, 1120, 501, 1372, 659, 1401, 439, 1471, 251, 1577, 435 )
+width = 15.946
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1
+begin_cap_mode = 2
+end_cap_mode = 2
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="RedTextureProgress" type="TextureProgress" parent="UI"]
@@ -180,19 +243,21 @@ normal = ExtResource( 16 )
 position = Vector2( 0, 347 )
 scale = Vector2( 8.812, 7.906 )
 normal = ExtResource( 15 )
+pressed = ExtResource( 2 )
 action = "jump1"
 
 [node name="right_jumpBtn" type="TouchScreenButton" parent="UI"]
 position = Vector2( 742, 347 )
 scale = Vector2( 8.812, 7.906 )
 normal = ExtResource( 14 )
+pressed = ExtResource( 1 )
 action = "jump2"
 
 [node name="resultRoundText" type="Label" parent="UI"]
 visible = false
-margin_left = 192.0
+margin_left = 216.0
 margin_top = 186.0
-margin_right = 775.0
+margin_right = 799.0
 margin_bottom = 282.0
 rect_scale = Vector2( 1.042, 1.455 )
 custom_fonts/font = SubResource( 74 )
